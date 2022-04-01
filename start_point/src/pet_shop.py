@@ -70,4 +70,6 @@ def customer_can_afford_pet(customer,new_pet):
     if customer["cash"] >= new_pet["price"]:
         return True
     else:
-        return False                                          
+        return False
+
+                                          
