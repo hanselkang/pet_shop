@@ -21,7 +21,7 @@ def increase_pets_sold(sold_state, sold_number):
     sold_state["admin"]["pets_sold"] += sold_number
     return sold_state["admin"]["pets_sold"]
 
-
+# 7
 def get_stock_count(stock_inventory):
     return len(stock_inventory["pets"])
 
@@ -72,4 +72,21 @@ def customer_can_afford_pet(customer,new_pet):
     else:
         return False
 
-                                          
+
+def sell_pet_to_customer(pet_shop, need_pet, customer_purchase):
+    add_pet_to_customer(customer_purchase, need_pet)
+    increase_pets_sold(pet_shop, 1)
+    price = need_pet["price"]
+    remove_customer_cash(customer_purchase, price)
+    add_or_remove_cash(pet_shop, price)
+
+
+    # return get_customer_pet_count(customer_purchase)
+    # return get_pets_sold(pet_shop)
+    # return get_customer_cash(customer_purchas)
+    # return get_total_cash(pet_shop)
+
+        #     self.assertEqual(1, get_customer_pet_count(customer))
+        # self.assertEqual(1, get_pets_sold(self.cc_pet_shop))
+        # self.assertEqual(100, get_customer_cash(customer))
+        # self.assertEqual(1900, get_total_cash(self.cc_pet_shop))
