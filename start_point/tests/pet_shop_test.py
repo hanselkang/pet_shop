@@ -76,7 +76,7 @@ class TestPetShop(unittest.TestCase):
             "name": "Camelot of Pets"
         }
 
-    @unittest.skip("delete this line to run the test")
+    # @unittest.skip("delete this line to run the test")
     def test_pet_shop_name(self):
         name = get_pet_shop_name(self.cc_pet_shop)
         self.assertEqual("Camelot of Pets", name)
