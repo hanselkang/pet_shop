@@ -40,9 +40,6 @@ def find_pet_by_name(pet_shop, pet_name):
     for pets_select in pet_shop["pets"]:
         if pet_name == pets_select["name"]:
             return pets_select
-            
-        
-
 
 
 def remove_pet_by_name(pet_shop, pet_name):
@@ -81,6 +78,8 @@ def customer_can_afford_pet(customer, new_pet):
 def sell_pet_to_customer(pet_shop, need_pet, customer_purchase):
     if need_pet == None:
         return None
+    elif customer_purchase["cash"] <= need_pet["price"]:
+        increase_pets_sold(pet_shop, 0)
     else:
         add_pet_to_customer(customer_purchase, need_pet)
         increase_pets_sold(pet_shop, 1)
@@ -89,9 +88,7 @@ def sell_pet_to_customer(pet_shop, need_pet, customer_purchase):
         add_or_remove_cash(pet_shop, price)
 
 
-
-
-    #    self.assertEqual(0, get_customer_pet_count(customer))
-    #    self.assertEqual(0, get_pets_sold(self.cc_pet_shop))
-    #    self.assertEqual(1000, get_customer_cash(customer))
-    #    self.assertEqual(1000, get_total_cash(self.cc_pet_shop))
+# self.assertEqual(0, get_customer_pet_count(customer))
+# self.assertEqual(0, get_pets_sold(self.cc_pet_shop))
+# self.assertEqual(50, get_customer_cash(customer))
+# self.assertEqual(1000, get_total_cash(self.cc_pet_shop))
